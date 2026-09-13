@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QD Microgreens - Interactive Entrance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="entrance-container" id="entranceContainer">
+        <div class="storefront-layer" id="storefrontLayer">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561404?w=1200&h=800&fit=crop" alt="QD Microgreens Storefront" class="storefront-image">
+            
+            <div class="entrance-overlay">
+                <div class="entrance-header">
+                    <div class="logo-badge">QD</div>
+                    <h1>Microgreens</h1>
+                    <p>Premium Fresh Delivered</p>
+                </div>
+                
+                <div class="doors-container" id="doorsContainer">
+                    <div class="door door-left" id="doorLeft"></div>
+                    <div class="door door-right" id="doorRight"></div>
+                </div>
+                
+                <button class="enter-button" id="enterButton">
+                    <span>Enter the Store</span>
+                </button>
+                
+                <p class="hint-text">Click the doors or button to enter</p>
+            </div>
+            
+            <div class="light-burst"></div>
+        </div>
+        
+        <div class="homepage-layer" id="homepageLayer">
+            <header class="homepage-header">
+                <div class="header-content">
+                    <h2>Welcome to QD Microgreens</h2>
+                    <p>Handpicked, premium microgreens delivered fresh to your door</p>
+                </div>
+            </header>
+            
+            <main class="homepage-main">
+                <section class="products-section">
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <div class="product-icon">🌱</div>
+                            <h3>Arugula Microgreens</h3>
+                            <p class="product-desc">Peppery, fresh, nutrient-dense</p>
+                            <div class="product-price">$9.99</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🥬</div>
+                            <h3>Salad Mix Microgreens</h3>
+                            <p class="product-desc">Variety blend, mild flavor</p>
+                            <div class="product-price">$8.99</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🌾</div>
+                            <h3>Wheat Grass</h3>
+                            <p class="product-desc">Energy boost, detox blend</p>
+                            <div class="product-price">$7.99</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🌶️</div>
+                            <h3>Radish Microgreens</h3>
+                            <p class="product-desc">Spicy kick, perfect garnish</p>
+                            <div class="product-price">$10.99</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🫘</div>
+                            <h3>Pea Shoot Microgreens</h3>
+                            <p class="product-desc">Sweet, crisp, crunchy</p>
+                            <div class="product-price">$9.49</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🥦</div>
+                            <h3>Broccoli Microgreens</h3>
+                            <p class="product-desc">Sulforaphane rich, health</p>
+                            <div class="product-price">$11.99</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                        
+                        <div class="product-card">
+                            <div class="product-icon">🩷</div>
+                            <h3>Beet Microgreens</h3>
+                            <p class="product-desc">Earthy, sweet, vibrant</p>
+                            <div class="product-price">$10.49</div>
+                            <button class="product-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    
+    <div class="demo-controls">
+        <button class="demo-btn active" id="resetBtn">Reset Demo</button>
+        <button class="demo-btn" id="autoplayBtn">Autoplay</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

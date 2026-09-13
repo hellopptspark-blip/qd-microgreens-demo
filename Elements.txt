@@ -1,0 +1,112 @@
+// Elements
+const entranceContainer = document.getElementById('entranceContainer');
+const storefrontLayer = document.getElementById('storefrontLayer');
+const homepageLayer = document.getElementById('homepageLayer');
+const doorsContainer = document.getElementById('doorsContainer');
+const doorLeft = document.getElementById('doorLeft');
+const doorRight = document.getElementById('doorRight');
+const enterButton = document.getElementById('enterButton');
+const resetBtn = document.getElementById('resetBtn');
+const autoplayBtn = document.getElementById('autoplayBtn');
+
+// State
+let isAnimating = false;
+let autoplayActive = false;
+
+// TRIGGER ENTRANCE ANIMATION
+function triggerEntrance() {
+    if (isAnimating) return;
+    isAnimating = true;
+    
+    // Hide doors and button
+    doorsContainer.style.pointerEvents = 'none';
+    enterButton.classList.add('hidden');
+    doorLeft.classList.add('open-left');
+    doorRight.classList.add('open-right');
+    
+    // Fade out storefront after door animation
+    setTimeout(() => {
+        storefrontLayer.classList.add('fade-out');
+    }, 1200);
+    
+    // Show homepage
+    setTimeout(() => {
+        homepageLayer.classList.add('show');
+    }, 1800);
+}
+
+// RESET DEMO
+function resetDemo() {
+    isAnimating = false;
+    
+    // Reset all classes
+    storefrontLayer.classList.remove('fade-out');
+    homepageLayer.classList.remove('show');
+    enterButton.classList.remove('hidden');
+    doorLeft.classList.remove('open-left');
+    doorRight.classList.remove('open-right');
+    doorsContainer.style.pointerEvents = 'auto';
+}
+
+// EVENT LISTENERS
+enterButton.addEventListener('click', triggerEntrance);
+doorLeft.addEventListener('click', triggerEntrance);
+doorRight.addEventListener('click', triggerEntrance);
+
+resetBtn.addEventListener('click', () => {
+    resetDemo();
+    autoplayActive = false;
+    autoplayBtn.classList.remove('active');
+});
+
+autoplayBtn.addEventListener('click', () => {
+    autoplayActive = !autoplayActive;
+    autoplayBtn.classList.toggle('active');
+    
+    if (autoplayActive) {
+        const startAutoplay = () => {
+            resetDemo();
+            setTimeout(() => {
+                triggerEntrance();
+                setTimeout(startAutoplay, 7500);
+            }, 500);
+        };
+        startAutoplay();
+    }
+});
+
+// Keyboard accessibility
+enterButton.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerEntrance();
+    }
+});
+
+doorLeft.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerEntrance();
+    }
+});
+
+doorRight.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        triggerEntrance();
+    }
+});
+
+// Product button interactions (for demo feedback)
+document.querySelectorAll('.product-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const originalText = btn.textContent;
+        btn.textContent = 'Added!';
+        setTimeout(() => {
+            btn.textContent = originalText;
+        }, 1500);
+    });
+});
+
+console.log('QD Microgreens Demo Loaded - Ready for entrance effect');
