@@ -9,7 +9,7 @@
 <body>
     <div class="entrance-container" id="entranceContainer">
         <div class="storefront-layer" id="storefrontLayer">
-            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561404?w=1200&h=800&fit=crop" alt="QD Microgreens Storefront" class="storefront-image">
+            <img src="https://images.<img src="./Microgreens_Home_page.png".com/photo-1555939594-58d7cb561404?w=1200&h=800&fit=crop" alt="QD Microgreens Storefront" class="storefront-image">
             
             <div class="entrance-overlay">
                 <div class="entrance-header">
